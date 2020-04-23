@@ -1,0 +1,4 @@
+#add_subdirectory(External)
+#add_subdirectory(MultiSource)
+#add_subdirectory(Parallel)
+add_subdirectory(SingleSource)

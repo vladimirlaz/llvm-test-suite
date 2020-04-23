@@ -28,7 +28,7 @@ It is asssumed that all dependencies (OpenCL runtimes,
 CUDA SDK, AOT compilers, etc) are available in the system.
 
 
-See examples below for running tetss on diffrent devices:
+See examples below for running tests on different devices:
  - SYCL host:
 ```
 python  SYCL/Wimpy/lit-runner.py SYCL/Wimpy/test --param dpcpp_root_dir=<DPCPP_COMPILER> --param sycl_be=PI_HOST --param target_devices=host
