@@ -1,0 +1,34 @@
+@LIT_SITE_CFG_IN_HEADER@
+
+import sys
+import platform
+
+dpcpp_root_dir=os.path.dirname(os.path.dirname("@CMAKE_CXX_COMPILER@"))
+
+config.llvm_tools_dir = os.path.join(dpcpp_root_dir, 'bin')
+config.lit_tools_dir = os.path.dirname("@TEST_SUITE_LIT@")
+config.dump_ir_supported = "@DUMP_IR_SUPPORTED@" if "@DUMP_IR_SUPPORTED@" else False
+config.sycl_tools_dir = config.llvm_tools_dir
+config.sycl_include = os.path.join(dpcpp_root_dir, 'include', 'sycl')
+config.sycl_obj_root = "@CMAKE_CURRENT_BINARY_DIR@"
+#config.sycl_source_dir = "@SYCL_SOURCE_DIR@/source"
+config.sycl_libs_dir =  os.path.join(dpcpp_root_dir, ('bin' if platform.system() == "Windows" else 'lib'))
+config.target_triple = "x86_64-unknown-unknown-gnu"
+config.host_triple = "x86_64-unknown-unknown-gnu" 
+config.opencl_libs_dir = config.sycl_libs_dir
+config.opencl_include_dir = config.sycl_include
+config.target_devices = "@SYCL_TARGET_DEVICES@"
+config.sycl_be = "@SYCL_BE@"
+#config.cuda_toolkit_include = "@CUDA_TOOLKIT_INCLUDE@"
+#config.sycl_tools_src_dir = "@SYCL_TOOLS_SRC_DIR@"
+#config.llvm_build_lib_dir = "@LLVM_BUILD_LIBRARY_DIRS@"
+#config.llvm_build_bin_dir = "@LLVM_BUILD_BINARY_DIRS@"
+
+#config.llvm_enable_projects = "@LLVM_ENABLE_PROJECTS@"
+config.dpcpp_compiler = "@CMAKE_CXX_COMPILER@"
+
+import lit.llvm
+lit.llvm.initialize(lit_config, config)
+
+# Let the main config do the real work.
+lit_config.load_config(config, "@CMAKE_CURRENT_SOURCE_DIR@/lit.cfg.py")

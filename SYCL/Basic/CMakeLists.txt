@@ -1,0 +1,20 @@
+set(LLVM_TOOLS_DIR "${LLVM_BINARY_DIR}/bin/")
+
+#get_target_property(SYCL_BINARY_DIR sycl-toolchain BINARY_DIR)
+
+set(SYCL_INCLUDE "${SYCL_INCLUDE_BUILD_DIR}")
+set(SYCL_TOOLS_SRC_DIR "${PROJECT_SOURCE_DIR}/tools/")
+set(LLVM_BUILD_BINARY_DIRS "${LLVM_BINARY_DIR}/bin/")
+set(LLVM_BUILD_LIBRARY_DIRS "${LLVM_BINARY_DIR}/lib/")
+
+set(RT_TEST_ARGS ${RT_TEST_ARGS} "-v")
+set(DEPLOY_RT_TEST_ARGS ${DEPLOY_RT_TEST_ARGS} "-v -D SYCL_TOOLS_DIR=${CMAKE_INSTALL_PREFIX}/bin -D SYCL_LIBS_DIR=${CMAKE_INSTALL_PREFIX}/lib${LLVM_LIBDIR_SUFFIX} -D SYCL_INCLUDE=${SYCL_INCLUDE_DEPLOY_DIR}")
+
+#configure_lit_site_cfg(
+#  ${CMAKE_CURRENT_SOURCE_DIR}/lit.site.cfg.py.in
+#  ${CMAKE_CURRENT_BINARY_DIR}/lit.site.cfg.py
+#  MAIN_CONFIG
+#  ${CMAKE_CURRENT_SOURCE_DIR}/lit.cfg.py
+#  )
+configure_file("${CMAKE_CURRENT_SOURCE_DIR}/lit.site.cfg.py.in" "${CMAKE_CURRENT_BINARY_DIR}/lit.site.cfg")
+#configure_file("${CMAKE_CURRENT_SOURCE_DIR}/Unit/lit.site.cfg.py.in" "${CMAKE_CURRENT_BINARY_DIR}/Unit/lit.site.cfg")
