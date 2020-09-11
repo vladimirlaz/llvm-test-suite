@@ -15,14 +15,14 @@ these terms.
 
 ### Development
 
-**NB**: For any changes not related to DPC++, but rather to LLVM in general, it
-is strongly encouraged that you submit the patch to https://llvm.org/ directly.
+For any changes not related to DPC++, but rather to LLVM in general, it is
+strongly encouraged that you submit the patch to https://llvm.org/ directly.
 See [LLVM contribution guidelines](https://llvm.org/docs/Contributing.html)
 for more information.
 
 - Create a personal fork of the project on GitHub
-  - For the DPC++ Compiler project, use **intel** branch as baseline for your
-    changes.
+  - For the DPC++ end-to-end test development, use **intel** branch as baseline
+    for your changes.
 - Prepare your patch
   - follow [LLVM coding standards](https://llvm.org/docs/CodingStandards.html)
   - [clang-format](https://clang.llvm.org/docs/ClangFormat.html) and
@@ -32,17 +32,16 @@ for more information.
   - use
 
     ```bash
-    ./clang/tools/clang-format/git-clang-format `git merge-base origin/sycl HEAD`
+    wget https://raw.githubusercontent.com/intel/llvm/sycl/clang/tools/clang-format/git-clang-format
+    python git-clang-format `git merge-base origin/intel HEAD`
     ```
 
-    to check the format of your current changes against the `origin/sycl`
+    to check the format of your current changes against the `origin/intel`
     branch.
     - `-f` to also correct unstaged changes
     - `--diff` to only print the diff without applying
-- Build the project following
-[Get Started Guide instructions](sycl/doc/GetStartedGuide.md#build-dpc-toolchain).
-- Run regression tests -
-[instructions](sycl/doc/GetStartedGuide.md#test-dpc-toolchain).
+- Instructions about running DPC++ tests
+[README.md](SYCL/README.md).
 
 ### Commit message
 
@@ -51,14 +50,12 @@ for more information.
   https://llvm.org/docs/DeveloperPolicy.html#commit-messages) on the subject.
 - For any DPC++-related commit, the `[SYCL]` tag should be present in the
   commit message title. To a reasonable extent, additional tags can be used
-  to signify the component changed, e.g.: `[PI]`, `[CUDA]`, `[Doc]`.
+  to signify the component changed, e.g.: `[LIT]`, `[NFC]`, `[Doc]`.
 
 ### Review and acceptance testing
 
 - Create a pull request for your changes following [Creating a pull request
 instructions](https://help.github.com/articles/creating-a-pull-request/).
-- CI will run a signed-off check as soon as your PR is created - see the
-**check_pr** CI action results.
 - CI will run several build and functional testing checks as soon as the PR is
 approved by an Intel representative.
   - A new approval is needed if the PR was updated (e.g. during code review).
