@@ -10,7 +10,9 @@ This directory contains SYCL-related tests distributed in subdirectories:
  - Basic - tests used for sanity testing. Building, executing and checks are
    defined using insource comments with LIT syntax.
  - External - contains infrastructure for running tests which sources are
-   stored outside of this repository.
+   stored outside of this repository (see [External/README.md](External/README.md) for details).
+ - ExtraTests - contains infrastructure for picking up LIT style tests
+   from external directory passed in SYCL_EXTRA_TESTS_SRC. 
 
 # Execution
 ```
