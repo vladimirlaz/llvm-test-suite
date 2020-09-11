@@ -16,7 +16,7 @@ these terms.
 ### Development
 
 For any changes not related to DPC++, but rather to LLVM in general, it is
-strongly encouraged that you submit the patch to https://llvm.org/ directly.
+strongly encouraged that you submit the patch to https://github.com/llvm/llvm-test-suite directly.
 See [LLVM contribution guidelines](https://llvm.org/docs/Contributing.html)
 for more information.
 
@@ -41,7 +41,7 @@ for more information.
     - `-f` to also correct unstaged changes
     - `--diff` to only print the diff without applying
 - Instructions about running DPC++ tests
-[README.md](SYCL/README.md).
+  - see [README.md](SYCL/README.md).
 
 ### Commit message
 
@@ -56,9 +56,7 @@ for more information.
 
 - Create a pull request for your changes following [Creating a pull request
 instructions](https://help.github.com/articles/creating-a-pull-request/).
-- CI will run several build and functional testing checks as soon as the PR is
-approved by an Intel representative.
-  - A new approval is needed if the PR was updated (e.g. during code review).
+- CI will run checks (e.g. clang-format-check) as soon as the PR is created.
 - Once the PR is approved and all checks have passed, the pull request is
 ready for merge.
 

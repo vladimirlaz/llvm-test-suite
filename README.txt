@@ -18,7 +18,7 @@ Home for Intel llvm-test-suite extension targetting DPC++ testing:
 
 ## License
 
-See [LICENSE.txt](sycl/LICENSE.TXT) for details.
+See [LICENSE.txt](LICENSE.TXT) for details.
 
 ## Contributing
 
@@ -28,10 +28,5 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for details.
 
 * oneAPI Data Parallel C++ compiler - See
   [DPC++ Documentation](https://intel.github.io/llvm-docs/)
-
-## DPC++ related tests 
-
-The tests are stored in [SYCL](SYCL) directory.
-See [SYCL/README.md](SYCL/README.md) for details about executing of the tests.
 
 \*Other names and brands may be claimed as the property of others.
