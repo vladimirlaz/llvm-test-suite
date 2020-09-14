@@ -26,9 +26,7 @@ bool test0() {
       auto B = 
           Buf.get_access<access::mode::write>(cgh);
       cgh.single_task<class NonStandard>([=]
-                                  {
-                 B[0] = S;
-                                  });
+                                  {                 B[0] = S;                                  });
     });
   }
   bool Passed = (S.x == S0.x);
