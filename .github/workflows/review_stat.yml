@@ -8,6 +8,8 @@ jobs:
     steps:
       - name: Run pull request stats
         uses: flowwer-dev/pull-request-stats@master
-        organization: intel
-        repositories: llvm-test-suite
-        period: 90
+        with:
+          organization: intel
+          charts: true
+          repositories: llvm-test-suite
+          period: 90
