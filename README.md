@@ -1,6 +1,6 @@
 [![Pull Request Stats](https://github.com/vladimirlaz/llvm-test-suite/actions/workflows/review_stat.yml/badge.svg)](https://github.com/vladimirlaz/llvm-test-suite/actions/workflows/review_stat.yml)
 
-
+test
 # LLVM* test suite repository
 
 Please see the LLVM testing infrastructure guide:
