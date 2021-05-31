@@ -1,6 +1,7 @@
 // RUN: %clangxx -fsycl %s -o %t.out -g
 // RUN: %GPU_RUN_PLACEHOLDER SYCL_PI_TRACE=-1 %t.out %GPU_CHECK_PLACEHOLDER
 // REQUIRES: gpu
+// UNSUPPORTED: cuda
 #include "kernel-bundle-merge-options.hpp"
 
 // CHECK: piProgramBuild
