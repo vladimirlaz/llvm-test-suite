@@ -1,4 +1,4 @@
-// RUN: %clangxx -fsycl %s -o %t.out %debug_option 
+// RUN: %clangxx -fsycl %s -o %t.out %debug_option
 // RUN: %GPU_RUN_PLACEHOLDER SYCL_PI_TRACE=-1 %t.out %GPU_CHECK_PLACEHOLDER
 // REQUIRES: gpu
 // UNSUPPORTED: cuda
