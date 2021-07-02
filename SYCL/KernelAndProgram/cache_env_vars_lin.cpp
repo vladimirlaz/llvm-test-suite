@@ -22,10 +22,12 @@
 // RUN: env SYCL_CACHE_PERSISTENT=1 HOME=%t/cache_dir SYCL_PI_TRACE=-1 env -u XDG_CACHE_HOME env -u SYCL_CACHE_DIR %t.out | FileCheck %s --check-prefixes=CHECK-BUILD
 // RUN: env SYCL_CACHE_PERSISTENT=1 HOME=%t/cache_dir SYCL_PI_TRACE=-1 env -u XDG_CACHE_HOME env -u SYCL_CACHE_DIR %t.out | FileCheck %s --check-prefixes=CHECK-CACHE
 
-// CHECK-BUILD: piProgramBuild
-// CHECK-BUILD-NOT: piProgramCreateWithBinary
+// CHECK-BUILD-NOT: piProgramCreateWithBinary(
+// CHECK-BUILD: piProgramCreate(
+// CHECK-BUILD: piProgramBuild(
 
-// CHECK-CACHE-NOT: piProgramBuild
-// CHECK-CACHE: piProgramCreateWithBinary
+// CHECK-CACHE-NOT: piProgramCreate(
+// CHECK-CACHE: piProgramCreateWithBinary(
+// CHECK-CACHE: piProgramBuild(
 
 #include "cache_env_vars.hpp"

@@ -22,10 +22,12 @@
 // CPU OCL JIT       0.12    0.12  0.16     1.1     16
 // CPU OCL Cache     0.01    0.01  0.01	   0.02   0.08
 
-// CHECK-BUILD: piProgramBuild
-// CHECK-BUILD-NOT: piProgramCreateWithBinary
+// CHECK-BUILD-NOT: piProgramCreateWithBinary(
+// CHECK-BUILD: piProgramCreate(
+// CHECK-BUILD: piProgramBuild(
 
-// CHECK-CACHE-NOT: piProgramBuild
-// CHECK-CACHE: piProgramCreateWithBinary
+// CHECK-CACHE-NOT: piProgramCreate(
+// CHECK-CACHE: piProgramCreateWithBinary(
+// CHECK-CACHE: piProgramBuild(
 
 #include "cache_env_vars.hpp"
